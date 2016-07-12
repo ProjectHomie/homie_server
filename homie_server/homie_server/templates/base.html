@@ -1,0 +1,15 @@
+{% load staticfiles %}<!DOCTYOE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static "css/application.css" %}">
+        <link rel="stylesheet" href="{% static "css/partials/header.css" %}">
+        <link rel="stylesheet" href="{% static "css/partials/footer.css" %}">
+    </head>
+    <body>
+        {% include "partials/header.html" %}
+        <section id="content">
+            {% block content %}{% endblock %}
+        </section>
+        {% include "partials/footer.html" %}
+    </body>
+</html>
