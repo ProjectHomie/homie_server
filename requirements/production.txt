@@ -1,3 +1,5 @@
 Django
 django-pipeline
 dj_database_url
+honcho
+gunicorn

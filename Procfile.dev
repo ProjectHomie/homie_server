@@ -1,0 +1,3 @@
+web: python homie_server/manage.py runserver 8000
+worker: celery --workdir=homie_server/ --app=homie_server.celery:app worker --loglevel INFO
+flower: celery --workdir=homie_server/ --app=homie_server.celery:app flower
