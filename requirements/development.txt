@@ -4,3 +4,4 @@ ipython[all]
 django-debug-toolbar
 django-extensions
 #django-pipeline
+honcho
