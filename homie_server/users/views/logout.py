@@ -13,5 +13,6 @@ class LogoutView(View):
             request,
             messages.SUCCESS,
             "성공적으로 로그아웃 되었습니다.",
-            )
+        )
+
         return redirect(reverse("home"))
