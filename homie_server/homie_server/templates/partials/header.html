@@ -5,16 +5,16 @@
         {% if request.user.is_authenticated %}
             <ul>
                 <li>
-                <a href="{% url "logout" %}"><spen>{{ user }}</spen>님 Logout</a>
+                <a href="{% url "users:logout" %}"><spen>{{ user }}</spen>님 Logout</a>
                 </li>
             </ul>
         {% else %}
             <ul>
                 <li>
-                    <a href="{% url "login" %}">Login</a>
+                    <a href="{% url "users:login" %}">Login</a>
                 </li>
                 <li>
-                    <a href="{% url "signup" %}">Signup</a>
+                    <a href="{% url "users:signup" %}">Signup</a>
                 </li>
             </ul>
         {% endif %}
