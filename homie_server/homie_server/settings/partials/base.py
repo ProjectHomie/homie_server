@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'pipeline',
     'storages',
 
+    'homie_server',
     'users',
 ]
 

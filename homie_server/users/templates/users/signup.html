@@ -2,4 +2,15 @@
 
 {% block content %}
     <h1>Signup</h1>
+    <section>
+        <form action="{% url "signup" %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="username" required></br>
+            <input type="password" name="password" placeholder="password" required></br>
+            <input type="tel" name="phonenumber" placeholder="phonenumber" required></br>
+            <input type="email" name="useremail" placeholder="useremail" required></br>
+            <input type="text" name="address" placeholder="address" required></br>
+            <input type="submit" value="signup">
+        </form>
+    </section>
 {% endblock %}
