@@ -2,13 +2,16 @@
     <h1>Header</h1>
 
     <section>
-        <ul>
-            <li>
-                <a href="{% url "login" %}">Login</a>
-            </li>
-            <li>
-                <a href="{% url "signup" %}">signup</a>
-            </li>
-        </ul>
+        {% if request.user.is_authenticated %}
+        {% else %}
+            <ul>
+                <li>
+                    <a href="{% url "login" %}">Login</a>
+                </li>
+                <li>
+                    <a href="{% url "signup" %}">signup</a>
+                </li>
+            </ul>
+        {% endif %}
     </section>
 </header>
