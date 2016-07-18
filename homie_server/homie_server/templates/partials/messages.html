@@ -2,7 +2,7 @@
     <section id="messages">
         <ul>
         {% for message in messages %}
-            <li class="{{ message.tags }}">
+            <li class="{{ message.tags }}" role="alert">
                 <p>{{ message }}</p>
             </li>
         {% endfor %}
