@@ -3,13 +3,18 @@
 
     <section>
         {% if request.user.is_authenticated %}
+            <ul>
+                <li>
+                <a href="{% url "logout" %}"><spen>{{ user }}</spen>님 Logout</a>
+                </li>
+            </ul>
         {% else %}
             <ul>
                 <li>
                     <a href="{% url "login" %}">Login</a>
                 </li>
                 <li>
-                    <a href="{% url "signup" %}">signup</a>
+                    <a href="{% url "signup" %}">Signup</a>
                 </li>
             </ul>
         {% endif %}
