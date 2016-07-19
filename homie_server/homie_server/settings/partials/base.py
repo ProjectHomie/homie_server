@@ -23,6 +23,7 @@ PROJECT_ROOT_DIR = os.path.dirname(BASE_DIR)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '098)511$v#=^e0+*@*06(1^5cl_l$6l!za18ef#$e7uh%@rybu'
+# SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -74,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
                 'social.apps.django_app.context_processors.backends',
                 'social.apps.django_app.context_processors.login_redirect',
             ],
@@ -162,15 +164,3 @@ PIPELINE = {
         }
     }
 }
-# AUTH
-AUTH_USER_MODEL = "users.User"
-
-LOGIN_URL = "/login/"
-
-SIGNUP_SUCCESS_MESSAGE = "성공적으로 회원가입 되었습니다."
-LOGIN_SUCCESS_MESSAGE = "성공적으로 로그인 되었습니다."
-LOGOUT_SUCCESS_MESSAGE = "성공적으로 로그아웃 되었습니다."
-
-AUTHENTICATION_BAKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-]

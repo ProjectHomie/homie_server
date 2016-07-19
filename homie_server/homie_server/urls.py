@@ -22,6 +22,9 @@ from homie_server.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view(), name="home"),
+
+    url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^', include("users.urls", namespace="users")),
+
+    url(r'^$', HomeView.as_view(), name="home"),
 ]
