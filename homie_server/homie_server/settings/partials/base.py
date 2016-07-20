@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     'homie_server',
     'users',
+    'posts'
 ]
 
 MIDDLEWARE_CLASSES = [
