@@ -2,6 +2,7 @@
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
+    meView.as_view(), name="home"),
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -13,13 +14,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
-from users.views import *
+from homie_server.views import *
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^signup/', SignupView.as_view(), name="signup"),
+
+    url('', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^', include("users.urls", namespace="users")),
+
+    url(r'^$', HomeView.as_view(), name="home"),
 ]
