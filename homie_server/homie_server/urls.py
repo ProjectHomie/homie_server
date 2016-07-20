@@ -18,13 +18,20 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from homie_server.views import *
+from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework_jwt.views import refresh_jwt_token
+from rest_framework_jwt.views import verify_jwt_token
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', include('social.apps.django_app.urls', namespace='social')),
 
-    url('', include('social.apps.django_app.urls', namespace='social')),
+    # url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^', include("users.urls", namespace="users")),
+    url(r'^api-token-auth/', obtain_jwt_token),
+    url(r'^api-token-refresh/', refresh_jwt_token),
+    url(r'^api-token-verify/', verify_jwt_token),
 
     url(r'^$', HomeView.as_view(), name="home"),
 ]
