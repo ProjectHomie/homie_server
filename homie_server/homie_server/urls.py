@@ -27,6 +27,5 @@ urlpatterns = [
     url('', include("social.apps.django_app.urls", namespace="social")),
     url(r'^', include("users.urls", namespace="users")),
     url(r'^posts/', include("posts.urls", namespace="posts")),
-#    url(r'^api-token-auth/', obtain_jwt_token),
     url(r'^$', HomeView.as_view(), name="home"),
 ]
