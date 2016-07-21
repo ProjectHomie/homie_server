@@ -4,6 +4,8 @@ from posts.views import *
 
 
 urlpatterns = [
+    url(r'^$', list, name="post-list"),
+    url(r'^(?P<post_id>\d+)/$', detail, name="post-detail"),
 ]
 # url(r'^$', PostListView.as_view(), name="list"),
 # url(r'^new/$', NewView.as_view(), name="new"),

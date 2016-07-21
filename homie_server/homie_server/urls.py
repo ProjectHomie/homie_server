@@ -18,6 +18,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from homie_server.views import *
+# from rest_framework_jwt.views import obtain_jwt_token
 
 
 urlpatterns = [
@@ -26,6 +27,6 @@ urlpatterns = [
     url('', include("social.apps.django_app.urls", namespace="social")),
     url(r'^', include("users.urls", namespace="users")),
     url(r'^posts/', include("posts.urls", namespace="posts")),
-
+#    url(r'^api-token-auth/', obtain_jwt_token),
     url(r'^$', HomeView.as_view(), name="home"),
 ]
