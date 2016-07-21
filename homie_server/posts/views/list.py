@@ -7,7 +7,7 @@ def list(request):
     return render(
         request,
         "posts/list.html",
-        {
+        context={
             "posts": Post.objects.all(),
         },
     )
