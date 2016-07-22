@@ -2,10 +2,14 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 
-# class PostManager(models.Manager):
-#     def public(self):
-#         return self.filter(is_public=True)
+class PostManager(models.Manager):
+    def public(self):
+        return self.filter(is_public=True)
+
+
 class Post(models.Model):
+    objects = PostManager()
+
     title = models.CharField(
         max_length=120,
     )
