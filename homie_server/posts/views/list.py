@@ -8,6 +8,6 @@ def list(request):
         request,
         "posts/list.html",
         context={
-            "posts": Post.objects.filter(is_public=True),
+            "posts": Post.objects.public(),
         },
     )
