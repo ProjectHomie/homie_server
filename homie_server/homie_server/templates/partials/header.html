@@ -8,6 +8,9 @@
                     <a href="{% url "home" %}">Home</a>
                 </li>
                 <li>
+                    <a href="{% url "posts:list" %}">Post List</a>
+                </li>
+                <li>
                 <a href="{% url "users:logout" %}"><spen>{{ user }}</spen>님 Logout</a>
                 </li>
             </ul>
@@ -15,6 +18,9 @@
             <ul>
                 <li>
                     <a href="{% url "home" %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url "home" %}">Post list</a>
                 </li>
                 <li>
                     <a href="{% url "users:login" %}">Login</a>
