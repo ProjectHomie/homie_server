@@ -16,10 +16,10 @@ class LoginView(View):
         )
 
     def post(self, request, *args, **kwargs):
+
         username = request.POST.get("username")
         password = request.POST.get("password")
-
-        next_url = request.POST.get("next_url") or reverse("home")
+        next_url = request.POST.get("next_url") or reverse("users:mypage")
         # FIXME: redirect to home
 
         user = authenticate(

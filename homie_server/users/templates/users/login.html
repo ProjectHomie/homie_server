@@ -6,6 +6,7 @@
     <section>
         <form action="{% url "users:login" %}" method="POST">
         {% csrf_token %}
+            <input type="hidden" name="next_url" value="{{ request.GET.next }}"></br>
             <input type="text" name="username" placeholder="username" required></br>
             <input type="password" name="password" placeholder="password" required></br>
             <input type="hidden" name="next" value="{{ request.GET.next }}"> 

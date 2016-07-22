@@ -8,6 +8,7 @@ def create(request):
     content = request.POST.get("content")
 
     post = Post.objects.create(
+        user=request.user,
         title=title,
         content=content,
     )
