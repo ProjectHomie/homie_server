@@ -2,32 +2,19 @@
     <h1>Header</h1>
 
     <section>
+        <ul>
+            <li><a href="{% url "home" %}">Home</a></li>
+            <li><a href="{% url "posts:list" %}">Post List</a></li>
+        </ul>
         {% if request.user.is_authenticated %}
             <ul>
-                <li>
-                    <a href="{% url "home" %}">Home</a>
-                </li>
-                <li>
-                    <a href="{% url "posts:list" %}">Post List</a>
-                </li>
-                <li>
-                <a href="{% url "users:logout" %}"><spen>{{ user }}</spen>님 Logout</a>
-                </li>
+                <li><a href="{% url "users:mypage" %}">User name : {{ request.user.username }}</a></li>
+                <li><a href="{% url "users:logout" %}"><spen>{{ user }}</spen>님 Logout</a></li>
             </ul>
         {% else %}
             <ul>
-                <li>
-                    <a href="{% url "home" %}">Home</a>
-                </li>
-                <li>
-                    <a href="{% url "home" %}">Post list</a>
-                </li>
-                <li>
-                    <a href="{% url "users:login" %}">Login</a>
-                </li>
-                <li>
-                    <a href="{% url "users:signup" %}">Signup</a>
-                </li>
+                <li><a href="{% url "users:login" %}">Login</a></li>
+                <li><a href="{% url "users:signup" %}">Signup</a></li>
             </ul>
         {% endif %}
     </section>

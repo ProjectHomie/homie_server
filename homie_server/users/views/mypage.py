@@ -3,9 +3,9 @@ from django.contrib.auth.decorators import login_required
 
 
 @login_required
-def new(request):
+def mypage(request):
     return render(
         request,
-        "posts/new.html",
+        "users/mypage.html",
         context={},
     )

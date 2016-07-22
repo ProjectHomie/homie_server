@@ -1,9 +1,10 @@
 import os
 
-# AUTH
 AUTH_USER_MODEL = "users.User"
 
-# LOGIN_URL = "/login/"
+# Custom Authentication URLS
+LOGIN_URL = "/login/"
+
 # LOGIN_URL = "/api-token-auth/"
 
 SIGNUP_SUCCESS_MESSAGE = "성공적으로 회원가입 되었습니다."
