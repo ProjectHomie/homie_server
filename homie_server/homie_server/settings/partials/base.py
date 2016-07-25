@@ -45,9 +45,10 @@ INSTALLED_APPS = [
     'social.apps.django_app.default',
     'storages',
 
-    'homie_server',
     'users',
     'posts',
+    'bitly',
+    'homie_server',
 ]
 
 MIDDLEWARE_CLASSES = [
