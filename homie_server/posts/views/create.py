@@ -1,16 +1,19 @@
+from django.views.generic import View
 from django.shortcuts import redirect
 
 from posts.models import Post
 
 
-def create(request):
-    title = request.POST.get("title")
-    content = request.POST.get("content")
+class PostCreateView(View):
 
-    post = Post.objects.create(
-        user=request.user,
-        title=title,
-        content=content,
-    )
+    def post(self, request, *arg, **kwargs):
+        title = request.POST.get("title")
+        content = request.POST.get("content")
 
-    return redirect(post)
+        post = Post.objects.create(
+            user=request.user,
+            title=title,
+            content=content,
+        )
+
+        return redirect(post)
