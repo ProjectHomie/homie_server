@@ -14,6 +14,17 @@ class PostCreateView(View):
             "posts/new.html",
             context={},
         )
+
+    def post(self, request, *args, **kwargs):
+        title = request.POST.get("title")
+        content = request.POST.get("content")
+
+        request.user.post_set.create(
+            title=title,
+            content=content,
+        )
+
+        return redirect(reverse("posts:create"))
 # class PostCreateView(PostBaseView, CreateView):
 #     fields = [
 #         "title",
@@ -29,7 +40,7 @@ class PostCreateConfirmView(View):
 
     def get(self, request, *args, **kwargs):
         return redirect(reverse("posts:create"))
-    
+
     def post(self, request, *args, **kwargs):
         title = request.POST.get("title")
         content = request.POST.get("content")

@@ -7,9 +7,11 @@
     <h3>{{ title}}</h3>
     <p>{{ content }}</p>
 
-    <form>
+    <form action="{% url "posts:create" %}" method="POST">
         {% csrf_token %}
         <p>위의 정보로 포스트를 생성하시겠습니까?</p>
+        <input type="hidden" name="title" value="{{ title }}">
+        <input type="hidden" name="content" value="{{ content }}">
         <input type="submit">
     </form>
 </section>
