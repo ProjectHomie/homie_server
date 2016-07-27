@@ -9,7 +9,6 @@ celery[redis]
 redis
 flower
 dj-database-url
-honcho
 gunicorn
 psycopg2
 django-storages-redux
