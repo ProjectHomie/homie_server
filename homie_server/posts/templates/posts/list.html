@@ -4,13 +4,18 @@
 {% block content %}
 <h1>Post List</h1>
 
-<ul>
-    {% for post in posts %}
-        <a href="{% url "posts:detail" pk=post.id %}">
-            <h2>{{ post.title }}</h2>
-        </a>
-        <p>{{ post.content }}</p>
-        <p>{{ post.careate_at }}</p>
-    {% endfor %}
-</ul>
+<section>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url "posts:detail" slug=post.id %}">
+                    <h3>{{ post.title }}</h3>
+                </a>
+            </li>
+            <p>{{ post.content }}</p>
+            <p>{{ post.careate_at }}</p>
+            <a href="{{ post.get_absolute_url }}">상세페이지 바로가기</a>
+        {% endfor %}
+    </ul>
+</section>
 {% endblock %}

@@ -5,8 +5,7 @@ from .base import PostBaseView
 
 class PostDetailView(PostBaseView, DetailView):
     template_name = "posts/detail.html"
-# def detail(request, post_id):
-#     return render(
+    slug_field = "hash_id"
 #         request,
 #         "posts/detail.html",
 #         context={

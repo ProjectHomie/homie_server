@@ -3,8 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse
 from django.views.generic import View
 from django.shortcuts import redirect, render
-
 from .base import PostBaseView
+from django.contrib.auth import get_user_model
 
 
 class PostCreateView(LoginRequiredMixin, View):
@@ -20,7 +20,8 @@ class PostCreateView(LoginRequiredMixin, View):
         title = request.POST.get("title")
         content = request.POST.get("content")
 
-        request.user.post_set.create(
+        # post = get_user_model().post_set.create(
+        post = request.user.post_set.create(
             title=title,
             content=content,
         )

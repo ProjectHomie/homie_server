@@ -14,6 +14,12 @@ class Post(models.Model):
 
     user = models.ForeignKey(User)
 
+    hash_id = models.CharField(
+        max_length=8,
+        blank=True,
+        null=True,
+    )
+
     title = models.CharField(
         max_length=120,
     )
@@ -33,8 +39,8 @@ class Post(models.Model):
         return reverse(
             "posts:detail",
             kwargs={
-                "pk": self.id,
-            },
+                "slug": self.hash_id,
+            }
         )
 
     def get_update_url(self):
