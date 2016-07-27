@@ -1,7 +1,6 @@
 Django
 django-pipeline
 python-social-auth
-hashids
 Pillow
 requests
 beautifulsoup4
