@@ -1,4 +1,5 @@
 from django.views.generic.edit import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse
 from django.views.generic import View
 from django.shortcuts import redirect, render
@@ -6,7 +7,7 @@ from django.shortcuts import redirect, render
 from .base import PostBaseView
 
 
-class PostCreateView(View):
+class PostCreateView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         return render(
@@ -36,7 +37,7 @@ class PostCreateView(View):
 #         return super(new, self).form_valid(form)
 
 
-class PostCreateConfirmView(View):
+class PostCreateConfirmView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         return redirect(reverse("posts:create"))
