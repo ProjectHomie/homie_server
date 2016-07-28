@@ -5,6 +5,7 @@
         <ul>
             <li><a href="{% url "home" %}">Home</a></li>
             <li><a href="{% url "posts:list" %}">Post List</a></li>
+            <li><a href="{% url "posts:create" %}">Post Create</a></li>
         </ul>
         {% if request.user.is_authenticated %}
             <ul>

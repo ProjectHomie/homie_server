@@ -4,10 +4,9 @@
 {% block content %}
 <h1>Posts Detail</h1>
 <section>
-    <ul><li><h3>{{ post.title }}</h3></li>
-        <p>{{ post.content }}</p>
-    </ul>
     <ul>
+        <li><h3>{{ post.title }}</h3></li>
+        <p>{{ post.content }}</p>
         <li><a href="{% url "posts:edit" post_id=post.id %}">Edit</a></li>
         <li><a href="{% url "posts:delete" post_id=post.id %}">Delet</a></li>
     </ul>
