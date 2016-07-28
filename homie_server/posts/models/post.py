@@ -11,18 +11,12 @@ class Post(models.Model):
     )
 
     content = models.TextField()
-<<<<<<< HEAD
-<<<<<<< HEAD
     is_public = models.BooleanField(
         default=True,
     )
 
     careate_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
-=======
->>>>>>> c6b23b4661f8e5c918c4b527a4d8c702a3cd51d7
-=======
->>>>>>> c6b23b4661f8e5c918c4b527a4d8c702a3cd51d7
 
     def __str__(self):
         return self.title
