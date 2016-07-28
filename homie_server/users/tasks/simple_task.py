@@ -5,7 +5,7 @@ from celery import Task
 
 
 class SimpleTask(Task):
-    
+
     def run(self):
         sleep(3)
 

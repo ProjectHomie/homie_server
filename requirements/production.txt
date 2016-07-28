@@ -15,3 +15,4 @@ gunicorn
 psycopg2
 django-storages-redux
 boto
+honcho
