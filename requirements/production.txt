@@ -1,10 +1,12 @@
 Django
 django-pipeline
 python-social-auth
+hashids
 Pillow
 requests
 beautifulsoup4
 djangorestframework
+celery
 celery[redis]
 redis
 flower
@@ -13,3 +15,4 @@ gunicorn
 psycopg2
 django-storages-redux
 boto
+honcho
