@@ -13,5 +13,3 @@ gunicorn
 psycopg2
 django-storages-redux
 boto
-hashids
-dj-database-url

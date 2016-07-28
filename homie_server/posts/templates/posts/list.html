@@ -8,7 +8,7 @@
     <ul>
         {% for post in posts %}
             <li>
-                <a href="{% url "posts:detail" slug=post.id %}">
+                <a href="{% url "posts:detail" pk=post.id %}">
                     <h3>{{ post.title }}</h3>
                 </a>
             </li>

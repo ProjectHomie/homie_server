@@ -47,7 +47,6 @@ INSTALLED_APPS = [
 
     'users',
     'posts',
-    'bitly',
     'homie_server',
 ]
 

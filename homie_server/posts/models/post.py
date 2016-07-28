@@ -21,10 +21,11 @@ class Post(models.Model):
     )
 
     title = models.CharField(
-        max_length=120,
+        max_length=256 ,
     )
 
     content = models.TextField()
+
     is_public = models.BooleanField(
         default=True,
     )
@@ -39,7 +40,7 @@ class Post(models.Model):
         return reverse(
             "posts:detail",
             kwargs={
-                "slug": self.hash_id,
+                "pk": self.id,
             }
         )
 

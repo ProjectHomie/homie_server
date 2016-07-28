@@ -6,5 +6,6 @@ install:
     - pip install -r requirements/development.txt
 script:
     - pep8 .
+    - python homie_server/manage.py test users posts
 notifications:
     slack: hans-hq:e3X4Z2Ip23KkdW4pbhqeZ9AN
