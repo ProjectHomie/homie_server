@@ -4,7 +4,7 @@ from django.views.generic import View
 from django.shortcuts import redirect, render
 from .base import PostBaseView
 
-   
+
 class PostCreateView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
@@ -24,7 +24,7 @@ class PostCreateView(LoginRequiredMixin, View):
         )
         return redirect(reverse("posts:create"))
 
-        
+
 class PostCreateConfirmView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):

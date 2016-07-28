@@ -21,7 +21,7 @@ class Post(models.Model):
     )
 
     title = models.CharField(
-        max_length=256 ,
+        max_length=256,
     )
 
     content = models.TextField()
@@ -40,7 +40,7 @@ class Post(models.Model):
         return reverse(
             "posts:detail",
             kwargs={
-                "pk": self.id,
+                "slug": self.hash_id,
             }
         )
 
